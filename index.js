@@ -12,11 +12,20 @@ module.exports = {
     },
 
     factorial: function (n) {
-        if (n == 1) {
+        if (n == 0 || n == 1) {
             return 1;
         }
         else {
             return n * module.exports.factorial(n - 1);
+        }
+    },
+
+    exponentiation: function (base, exponent) {
+        if (exponent == 0) {
+            return 1;
+        }
+        else {
+            return base * module.exports.exponentiation(base, exponent - 1);
         }
     }
 }

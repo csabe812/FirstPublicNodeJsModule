@@ -1,6 +1,7 @@
 var assert = require('assert');
 var fibonacci = require('../index').fibonacci;
 var factorial = require('../index').factorial;
+var exponentiation = require('../index').exponentiation;
 
 describe('Testing fibonacci function', function () {
     it('should return null when the value is = 0', function () {
@@ -28,8 +29,27 @@ describe('Testing fibonacci function', function () {
         assert.equal(fibonacci(10), 55);
     });
 });
-describe('Testing factorial function', function () {
+
+describe('Testing factorial function (n should be >= 0)', function () {
     it('should return 120 when the value is 5', function () {
         assert.equal(factorial(5), 120);
+    });
+    it('should return 6 when the value is 3', function () {
+        assert.equal(factorial(3), 6);
+    });
+    it('should return 1 when the value is 0', function () {
+        assert.equal(factorial(0), 1);
+    });
+});
+
+describe('Testing exponentiation function (exponent should be >= 0)', function () {
+    it('should return 125 when the base is 5 and the exponent is 3', function () {
+        assert.equal(exponentiation(5, 3), 125);
+    });
+    it('should return 1024 when the base is 2 and the exponent is 10', function () {
+        assert.equal(exponentiation(2, 10), 1024);
+    });
+    it('should return 1 when the base is 2 and the exponent is 0', function () {
+        assert.equal(exponentiation(2, 0), 1);
     });
 });
