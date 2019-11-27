@@ -1,5 +1,6 @@
 var assert = require('assert');
 var fibonacci = require('../index').fibonacci;
+var factorial = require('../index').factorial;
 
 describe('Testing fibonacci function', function () {
     it('should return null when the value is = 0', function () {
@@ -25,5 +26,10 @@ describe('Testing fibonacci function', function () {
     });
     it('should return 55 when the value is 10', function () {
         assert.equal(fibonacci(10), 55);
+    });
+});
+describe('Testing factorial function', function () {
+    it('should return 120 when the value is 5', function () {
+        assert.equal(factorial(5), 120);
     });
 });
